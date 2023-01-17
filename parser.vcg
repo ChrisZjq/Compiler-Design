@@ -1,0 +1,1286 @@
+graph: {
+	display_edge_labels:	yes
+	priority_phase:	yes
+	port_sharing:	no
+	crossing_weight:	median
+	splines:	yes
+	node: {
+		title:	"0"
+		label:	"state  0\n $accept -> . Program $end"
+	}
+	edge: {
+		sourcename:	"0"
+		targetname:	"1"
+		label:	"TYPE"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"0"
+		targetname:	"2"
+		label:	"ID"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"0"
+		targetname:	"3"
+		label:	"SEMICOLON"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"0"
+		targetname:	"4"
+		label:	"NUMBER"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"0"
+		targetname:	"5"
+		label:	"WRITE"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"0"
+		targetname:	"6"
+		label:	"RETURN"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"0"
+		targetname:	"7"
+		label:	"IF"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"0"
+		targetname:	"8"
+		label:	"Program"
+		color:	green
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"0"
+		targetname:	"9"
+		label:	"DeclList"
+		color:	green
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"0"
+		targetname:	"10"
+		label:	"Decl"
+		color:	green
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"0"
+		targetname:	"11"
+		label:	"VarDecl"
+		color:	green
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"0"
+		targetname:	"12"
+		label:	"FunDecl"
+		color:	green
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"0"
+		targetname:	"13"
+		label:	"StmtList"
+		color:	green
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"0"
+		targetname:	"14"
+		label:	"Stmt"
+		color:	green
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"0"
+		targetname:	"15"
+		label:	"Expr"
+		color:	green
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"0"
+		targetname:	"16"
+		label:	"Condition"
+		color:	green
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"0"
+		targetname:	"17"
+		label:	"IfExpr"
+		color:	green
+		textcolor:	black
+	}
+	node: {
+		title:	"1"
+		label:	"state  1\n VarDecl -> TYPE . ID\n VarDecl -> TYPE . ID STARTARRAY Primary ENDARRAY\n FunDecl -> TYPE . ID STARTPASS @1 ParamDeclList ENDPASS Block"
+	}
+	edge: {
+		sourcename:	"1"
+		targetname:	"18"
+		label:	"ID"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"2"
+		label:	"state  2\n Expr -> ID . EQ Iteration\n Expr -> ID . EQ ID\n Expr -> ID . EQ NUMBER\n Expr -> ID . STARTARRAY NUMBER ENDARRAY EQ NUMBER\n Expr -> ID . STARTARRAY NUMBER ENDARRAY EQ ID\n Expr -> ID . STARTPASS ENDPASS\n Condition -> ID . GREATERTHAN NUMBER\n Condition -> ID . LESSTHAN NUMBER\n Condition -> ID . GREATERTHAN ID\n Condition -> ID . LESSTHAN ID"
+	}
+	edge: {
+		sourcename:	"2"
+		targetname:	"19"
+		label:	"STARTPASS"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"2"
+		targetname:	"20"
+		label:	"STARTARRAY"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"2"
+		targetname:	"21"
+		label:	"EQ"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"2"
+		targetname:	"22"
+		label:	"GREATERTHAN"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"2"
+		targetname:	"23"
+		label:	"LESSTHAN"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"3"
+		label:	"state  3\n Stmt -> SEMICOLON ."
+	}
+	node: {
+		title:	"4"
+		label:	"state  4\n Condition -> NUMBER . GREATERTHAN NUMBER\n Condition -> NUMBER . LESSTHAN NUMBER\n Condition -> NUMBER . LESSTHAN ID\n Condition -> NUMBER . GREATERTHAN ID"
+	}
+	edge: {
+		sourcename:	"4"
+		targetname:	"24"
+		label:	"GREATERTHAN"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"4"
+		targetname:	"25"
+		label:	"LESSTHAN"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"5"
+		label:	"state  5\n Expr -> WRITE . ID\n Expr -> WRITE . ID STARTARRAY NUMBER ENDARRAY"
+	}
+	edge: {
+		sourcename:	"5"
+		targetname:	"26"
+		label:	"ID"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"6"
+		label:	"state  6\n Expr -> RETURN . Primary"
+	}
+	edge: {
+		sourcename:	"6"
+		targetname:	"27"
+		label:	"ID"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"6"
+		targetname:	"28"
+		label:	"STARTFUN"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"6"
+		targetname:	"29"
+		label:	"NUMBER"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"6"
+		targetname:	"30"
+		label:	"Primary"
+		color:	green
+		textcolor:	black
+	}
+	node: {
+		title:	"7"
+		label:	"state  7\n IfExpr -> IF . STARTPASS Condition ENDPASS Block\n IfExpr -> IF . STARTPASS Condition ENDPASS Block ELSE Block"
+	}
+	edge: {
+		sourcename:	"7"
+		targetname:	"31"
+		label:	"STARTPASS"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"8"
+		label:	"state  8\n $accept -> Program . $end"
+	}
+	edge: {
+		sourcename:	"8"
+		targetname:	"32"
+		label:	"$end"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"9"
+		label:	"state  9\n Program -> DeclList ."
+	}
+	node: {
+		title:	"10"
+		label:	"state 10\n DeclList -> Decl . DeclList\n DeclList -> Decl ."
+	}
+	backedge: {
+		sourcename:	"10"
+		targetname:	"1"
+		label:	"TYPE"
+		color:	blue
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"10"
+		targetname:	"2"
+		label:	"ID"
+		color:	blue
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"10"
+		targetname:	"3"
+		label:	"SEMICOLON"
+		color:	blue
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"10"
+		targetname:	"4"
+		label:	"NUMBER"
+		color:	blue
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"10"
+		targetname:	"5"
+		label:	"WRITE"
+		color:	blue
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"10"
+		targetname:	"6"
+		label:	"RETURN"
+		color:	blue
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"10"
+		targetname:	"7"
+		label:	"IF"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"10"
+		targetname:	"33"
+		label:	"DeclList"
+		color:	green
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"10"
+		targetname:	"10"
+		label:	"Decl"
+		color:	green
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"10"
+		targetname:	"11"
+		label:	"VarDecl"
+		color:	green
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"10"
+		targetname:	"12"
+		label:	"FunDecl"
+		color:	green
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"10"
+		targetname:	"13"
+		label:	"StmtList"
+		color:	green
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"10"
+		targetname:	"14"
+		label:	"Stmt"
+		color:	green
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"10"
+		targetname:	"15"
+		label:	"Expr"
+		color:	green
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"10"
+		targetname:	"16"
+		label:	"Condition"
+		color:	green
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"10"
+		targetname:	"17"
+		label:	"IfExpr"
+		color:	green
+		textcolor:	black
+	}
+	node: {
+		title:	"11"
+		label:	"state 11\n Decl -> VarDecl . SEMICOLON"
+	}
+	edge: {
+		sourcename:	"11"
+		targetname:	"34"
+		label:	"SEMICOLON"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"12"
+		label:	"state 12\n Decl -> FunDecl ."
+	}
+	node: {
+		title:	"13"
+		label:	"state 13\n Decl -> StmtList ."
+	}
+	node: {
+		title:	"14"
+		label:	"state 14\n StmtList -> Stmt . StmtList"
+	}
+	backedge: {
+		sourcename:	"14"
+		targetname:	"2"
+		label:	"ID"
+		color:	blue
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"14"
+		targetname:	"3"
+		label:	"SEMICOLON"
+		color:	blue
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"14"
+		targetname:	"4"
+		label:	"NUMBER"
+		color:	blue
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"14"
+		targetname:	"5"
+		label:	"WRITE"
+		color:	blue
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"14"
+		targetname:	"6"
+		label:	"RETURN"
+		color:	blue
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"14"
+		targetname:	"7"
+		label:	"IF"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"14"
+		targetname:	"35"
+		label:	"StmtList"
+		color:	green
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"14"
+		targetname:	"14"
+		label:	"Stmt"
+		color:	green
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"14"
+		targetname:	"15"
+		label:	"Expr"
+		color:	green
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"14"
+		targetname:	"16"
+		label:	"Condition"
+		color:	green
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"14"
+		targetname:	"17"
+		label:	"IfExpr"
+		color:	green
+		textcolor:	black
+	}
+	node: {
+		title:	"15"
+		label:	"state 15\n Stmt -> Expr . SEMICOLON"
+	}
+	edge: {
+		sourcename:	"15"
+		targetname:	"36"
+		label:	"SEMICOLON"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"16"
+		label:	"state 16\n Stmt -> Condition ."
+	}
+	node: {
+		title:	"17"
+		label:	"state 17\n Stmt -> IfExpr ."
+	}
+	node: {
+		title:	"18"
+		label:	"state 18\n VarDecl -> TYPE ID .\n VarDecl -> TYPE ID . STARTARRAY Primary ENDARRAY\n FunDecl -> TYPE ID . STARTPASS @1 ParamDeclList ENDPASS Block"
+	}
+	edge: {
+		sourcename:	"18"
+		targetname:	"37"
+		label:	"STARTPASS"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"18"
+		targetname:	"38"
+		label:	"STARTARRAY"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"19"
+		label:	"state 19\n Expr -> ID STARTPASS . ENDPASS"
+	}
+	edge: {
+		sourcename:	"19"
+		targetname:	"39"
+		label:	"ENDPASS"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"20"
+		label:	"state 20\n Expr -> ID STARTARRAY . NUMBER ENDARRAY EQ NUMBER\n Expr -> ID STARTARRAY . NUMBER ENDARRAY EQ ID"
+	}
+	edge: {
+		sourcename:	"20"
+		targetname:	"40"
+		label:	"NUMBER"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"21"
+		label:	"state 21\n Expr -> ID EQ . Iteration\n Expr -> ID EQ . ID\n Expr -> ID EQ . NUMBER"
+	}
+	edge: {
+		sourcename:	"21"
+		targetname:	"41"
+		label:	"ID"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"21"
+		targetname:	"42"
+		label:	"NUMBER"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"21"
+		targetname:	"43"
+		label:	"Iteration"
+		color:	green
+		textcolor:	black
+	}
+	node: {
+		title:	"22"
+		label:	"state 22\n Condition -> ID GREATERTHAN . NUMBER\n Condition -> ID GREATERTHAN . ID"
+	}
+	edge: {
+		sourcename:	"22"
+		targetname:	"44"
+		label:	"ID"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"22"
+		targetname:	"45"
+		label:	"NUMBER"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"23"
+		label:	"state 23\n Condition -> ID LESSTHAN . NUMBER\n Condition -> ID LESSTHAN . ID"
+	}
+	edge: {
+		sourcename:	"23"
+		targetname:	"46"
+		label:	"ID"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"23"
+		targetname:	"47"
+		label:	"NUMBER"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"24"
+		label:	"state 24\n Condition -> NUMBER GREATERTHAN . NUMBER\n Condition -> NUMBER GREATERTHAN . ID"
+	}
+	edge: {
+		sourcename:	"24"
+		targetname:	"48"
+		label:	"ID"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"24"
+		targetname:	"49"
+		label:	"NUMBER"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"25"
+		label:	"state 25\n Condition -> NUMBER LESSTHAN . NUMBER\n Condition -> NUMBER LESSTHAN . ID"
+	}
+	edge: {
+		sourcename:	"25"
+		targetname:	"50"
+		label:	"ID"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"25"
+		targetname:	"51"
+		label:	"NUMBER"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"26"
+		label:	"state 26\n Expr -> WRITE ID .\n Expr -> WRITE ID . STARTARRAY NUMBER ENDARRAY"
+	}
+	edge: {
+		sourcename:	"26"
+		targetname:	"52"
+		label:	"STARTARRAY"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"27"
+		label:	"state 27\n Primary -> ID ."
+	}
+	node: {
+		title:	"28"
+		label:	"state 28\n Primary -> STARTFUN . Expr ENDFUN"
+	}
+	edge: {
+		sourcename:	"28"
+		targetname:	"53"
+		label:	"ID"
+		color:	blue
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"28"
+		targetname:	"5"
+		label:	"WRITE"
+		color:	blue
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"28"
+		targetname:	"6"
+		label:	"RETURN"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"28"
+		targetname:	"54"
+		label:	"Expr"
+		color:	green
+		textcolor:	black
+	}
+	node: {
+		title:	"29"
+		label:	"state 29\n Primary -> NUMBER ."
+	}
+	node: {
+		title:	"30"
+		label:	"state 30\n Expr -> RETURN Primary ."
+	}
+	node: {
+		title:	"31"
+		label:	"state 31\n IfExpr -> IF STARTPASS . Condition ENDPASS Block\n IfExpr -> IF STARTPASS . Condition ENDPASS Block ELSE Block"
+	}
+	edge: {
+		sourcename:	"31"
+		targetname:	"55"
+		label:	"ID"
+		color:	blue
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"31"
+		targetname:	"4"
+		label:	"NUMBER"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"31"
+		targetname:	"56"
+		label:	"Condition"
+		color:	green
+		textcolor:	black
+	}
+	node: {
+		title:	"32"
+		label:	"state 32\n $accept -> Program $end ."
+	}
+	node: {
+		title:	"33"
+		label:	"state 33\n DeclList -> Decl DeclList ."
+	}
+	node: {
+		title:	"34"
+		label:	"state 34\n Decl -> VarDecl SEMICOLON ."
+	}
+	node: {
+		title:	"35"
+		label:	"state 35\n StmtList -> Stmt StmtList ."
+	}
+	node: {
+		title:	"36"
+		label:	"state 36\n Stmt -> Expr SEMICOLON ."
+	}
+	node: {
+		title:	"37"
+		label:	"state 37\n FunDecl -> TYPE ID STARTPASS . @1 ParamDeclList ENDPASS Block"
+	}
+	edge: {
+		sourcename:	"37"
+		targetname:	"57"
+		label:	"@1"
+		color:	green
+		textcolor:	black
+	}
+	node: {
+		title:	"38"
+		label:	"state 38\n VarDecl -> TYPE ID STARTARRAY . Primary ENDARRAY"
+	}
+	backedge: {
+		sourcename:	"38"
+		targetname:	"27"
+		label:	"ID"
+		color:	blue
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"38"
+		targetname:	"28"
+		label:	"STARTFUN"
+		color:	blue
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"38"
+		targetname:	"29"
+		label:	"NUMBER"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"38"
+		targetname:	"58"
+		label:	"Primary"
+		color:	green
+		textcolor:	black
+	}
+	node: {
+		title:	"39"
+		label:	"state 39\n Expr -> ID STARTPASS ENDPASS ."
+	}
+	node: {
+		title:	"40"
+		label:	"state 40\n Expr -> ID STARTARRAY NUMBER . ENDARRAY EQ NUMBER\n Expr -> ID STARTARRAY NUMBER . ENDARRAY EQ ID"
+	}
+	edge: {
+		sourcename:	"40"
+		targetname:	"59"
+		label:	"ENDARRAY"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"41"
+		label:	"state 41\n Expr -> ID EQ ID .\n Iteration -> ID . PLUS NUMBER\n Iteration -> ID . PLUS ID"
+	}
+	edge: {
+		sourcename:	"41"
+		targetname:	"60"
+		label:	"PLUS"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"42"
+		label:	"state 42\n Expr -> ID EQ NUMBER .\n Iteration -> NUMBER . PLUS NUMBER"
+	}
+	edge: {
+		sourcename:	"42"
+		targetname:	"61"
+		label:	"PLUS"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"43"
+		label:	"state 43\n Expr -> ID EQ Iteration ."
+	}
+	node: {
+		title:	"44"
+		label:	"state 44\n Condition -> ID GREATERTHAN ID ."
+	}
+	node: {
+		title:	"45"
+		label:	"state 45\n Condition -> ID GREATERTHAN NUMBER ."
+	}
+	node: {
+		title:	"46"
+		label:	"state 46\n Condition -> ID LESSTHAN ID ."
+	}
+	node: {
+		title:	"47"
+		label:	"state 47\n Condition -> ID LESSTHAN NUMBER ."
+	}
+	node: {
+		title:	"48"
+		label:	"state 48\n Condition -> NUMBER GREATERTHAN ID ."
+	}
+	node: {
+		title:	"49"
+		label:	"state 49\n Condition -> NUMBER GREATERTHAN NUMBER ."
+	}
+	node: {
+		title:	"50"
+		label:	"state 50\n Condition -> NUMBER LESSTHAN ID ."
+	}
+	node: {
+		title:	"51"
+		label:	"state 51\n Condition -> NUMBER LESSTHAN NUMBER ."
+	}
+	node: {
+		title:	"52"
+		label:	"state 52\n Expr -> WRITE ID STARTARRAY . NUMBER ENDARRAY"
+	}
+	edge: {
+		sourcename:	"52"
+		targetname:	"62"
+		label:	"NUMBER"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"53"
+		label:	"state 53\n Expr -> ID . EQ Iteration\n Expr -> ID . EQ ID\n Expr -> ID . EQ NUMBER\n Expr -> ID . STARTARRAY NUMBER ENDARRAY EQ NUMBER\n Expr -> ID . STARTARRAY NUMBER ENDARRAY EQ ID\n Expr -> ID . STARTPASS ENDPASS"
+	}
+	backedge: {
+		sourcename:	"53"
+		targetname:	"19"
+		label:	"STARTPASS"
+		color:	blue
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"53"
+		targetname:	"20"
+		label:	"STARTARRAY"
+		color:	blue
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"53"
+		targetname:	"21"
+		label:	"EQ"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"54"
+		label:	"state 54\n Primary -> STARTFUN Expr . ENDFUN"
+	}
+	edge: {
+		sourcename:	"54"
+		targetname:	"63"
+		label:	"ENDFUN"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"55"
+		label:	"state 55\n Condition -> ID . GREATERTHAN NUMBER\n Condition -> ID . LESSTHAN NUMBER\n Condition -> ID . GREATERTHAN ID\n Condition -> ID . LESSTHAN ID"
+	}
+	backedge: {
+		sourcename:	"55"
+		targetname:	"22"
+		label:	"GREATERTHAN"
+		color:	blue
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"55"
+		targetname:	"23"
+		label:	"LESSTHAN"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"56"
+		label:	"state 56\n IfExpr -> IF STARTPASS Condition . ENDPASS Block\n IfExpr -> IF STARTPASS Condition . ENDPASS Block ELSE Block"
+	}
+	edge: {
+		sourcename:	"56"
+		targetname:	"64"
+		label:	"ENDPASS"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"57"
+		label:	"state 57\n FunDecl -> TYPE ID STARTPASS @1 . ParamDeclList ENDPASS Block"
+	}
+	edge: {
+		sourcename:	"57"
+		targetname:	"65"
+		label:	"ParamDeclList"
+		color:	green
+		textcolor:	black
+	}
+	node: {
+		title:	"58"
+		label:	"state 58\n VarDecl -> TYPE ID STARTARRAY Primary . ENDARRAY"
+	}
+	edge: {
+		sourcename:	"58"
+		targetname:	"66"
+		label:	"ENDARRAY"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"59"
+		label:	"state 59\n Expr -> ID STARTARRAY NUMBER ENDARRAY . EQ NUMBER\n Expr -> ID STARTARRAY NUMBER ENDARRAY . EQ ID"
+	}
+	edge: {
+		sourcename:	"59"
+		targetname:	"67"
+		label:	"EQ"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"60"
+		label:	"state 60\n Iteration -> ID PLUS . NUMBER\n Iteration -> ID PLUS . ID"
+	}
+	edge: {
+		sourcename:	"60"
+		targetname:	"68"
+		label:	"ID"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"60"
+		targetname:	"69"
+		label:	"NUMBER"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"61"
+		label:	"state 61\n Iteration -> NUMBER PLUS . NUMBER"
+	}
+	edge: {
+		sourcename:	"61"
+		targetname:	"70"
+		label:	"NUMBER"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"62"
+		label:	"state 62\n Expr -> WRITE ID STARTARRAY NUMBER . ENDARRAY"
+	}
+	edge: {
+		sourcename:	"62"
+		targetname:	"71"
+		label:	"ENDARRAY"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"63"
+		label:	"state 63\n Primary -> STARTFUN Expr ENDFUN ."
+	}
+	node: {
+		title:	"64"
+		label:	"state 64\n IfExpr -> IF STARTPASS Condition ENDPASS . Block\n IfExpr -> IF STARTPASS Condition ENDPASS . Block ELSE Block"
+	}
+	edge: {
+		sourcename:	"64"
+		targetname:	"72"
+		label:	"STARTFUN"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"64"
+		targetname:	"73"
+		label:	"Block"
+		color:	green
+		textcolor:	black
+	}
+	node: {
+		title:	"65"
+		label:	"state 65\n FunDecl -> TYPE ID STARTPASS @1 ParamDeclList . ENDPASS Block"
+	}
+	edge: {
+		sourcename:	"65"
+		targetname:	"74"
+		label:	"ENDPASS"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"66"
+		label:	"state 66\n VarDecl -> TYPE ID STARTARRAY Primary ENDARRAY ."
+	}
+	node: {
+		title:	"67"
+		label:	"state 67\n Expr -> ID STARTARRAY NUMBER ENDARRAY EQ . NUMBER\n Expr -> ID STARTARRAY NUMBER ENDARRAY EQ . ID"
+	}
+	edge: {
+		sourcename:	"67"
+		targetname:	"75"
+		label:	"ID"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"67"
+		targetname:	"76"
+		label:	"NUMBER"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"68"
+		label:	"state 68\n Iteration -> ID PLUS ID ."
+	}
+	node: {
+		title:	"69"
+		label:	"state 69\n Iteration -> ID PLUS NUMBER ."
+	}
+	node: {
+		title:	"70"
+		label:	"state 70\n Iteration -> NUMBER PLUS NUMBER ."
+	}
+	node: {
+		title:	"71"
+		label:	"state 71\n Expr -> WRITE ID STARTARRAY NUMBER ENDARRAY ."
+	}
+	node: {
+		title:	"72"
+		label:	"state 72\n Block -> STARTFUN . ENDFUN\n Block -> STARTFUN . DeclList ENDFUN"
+	}
+	backedge: {
+		sourcename:	"72"
+		targetname:	"1"
+		label:	"TYPE"
+		color:	blue
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"72"
+		targetname:	"2"
+		label:	"ID"
+		color:	blue
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"72"
+		targetname:	"3"
+		label:	"SEMICOLON"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"72"
+		targetname:	"77"
+		label:	"ENDFUN"
+		color:	blue
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"72"
+		targetname:	"4"
+		label:	"NUMBER"
+		color:	blue
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"72"
+		targetname:	"5"
+		label:	"WRITE"
+		color:	blue
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"72"
+		targetname:	"6"
+		label:	"RETURN"
+		color:	blue
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"72"
+		targetname:	"7"
+		label:	"IF"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"72"
+		targetname:	"78"
+		label:	"DeclList"
+		color:	green
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"72"
+		targetname:	"10"
+		label:	"Decl"
+		color:	green
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"72"
+		targetname:	"11"
+		label:	"VarDecl"
+		color:	green
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"72"
+		targetname:	"12"
+		label:	"FunDecl"
+		color:	green
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"72"
+		targetname:	"13"
+		label:	"StmtList"
+		color:	green
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"72"
+		targetname:	"14"
+		label:	"Stmt"
+		color:	green
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"72"
+		targetname:	"15"
+		label:	"Expr"
+		color:	green
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"72"
+		targetname:	"16"
+		label:	"Condition"
+		color:	green
+		textcolor:	black
+	}
+	backedge: {
+		sourcename:	"72"
+		targetname:	"17"
+		label:	"IfExpr"
+		color:	green
+		textcolor:	black
+	}
+	node: {
+		title:	"73"
+		label:	"state 73\n IfExpr -> IF STARTPASS Condition ENDPASS Block .\n IfExpr -> IF STARTPASS Condition ENDPASS Block . ELSE Block"
+	}
+	edge: {
+		sourcename:	"73"
+		targetname:	"79"
+		label:	"ELSE"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"74"
+		label:	"state 74\n FunDecl -> TYPE ID STARTPASS @1 ParamDeclList ENDPASS . Block"
+	}
+	backedge: {
+		sourcename:	"74"
+		targetname:	"72"
+		label:	"STARTFUN"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"74"
+		targetname:	"80"
+		label:	"Block"
+		color:	green
+		textcolor:	black
+	}
+	node: {
+		title:	"75"
+		label:	"state 75\n Expr -> ID STARTARRAY NUMBER ENDARRAY EQ ID ."
+	}
+	node: {
+		title:	"76"
+		label:	"state 76\n Expr -> ID STARTARRAY NUMBER ENDARRAY EQ NUMBER ."
+	}
+	node: {
+		title:	"77"
+		label:	"state 77\n Block -> STARTFUN ENDFUN ."
+	}
+	node: {
+		title:	"78"
+		label:	"state 78\n Block -> STARTFUN DeclList . ENDFUN"
+	}
+	edge: {
+		sourcename:	"78"
+		targetname:	"81"
+		label:	"ENDFUN"
+		color:	blue
+		textcolor:	black
+	}
+	node: {
+		title:	"79"
+		label:	"state 79\n IfExpr -> IF STARTPASS Condition ENDPASS Block ELSE . Block"
+	}
+	backedge: {
+		sourcename:	"79"
+		targetname:	"72"
+		label:	"STARTFUN"
+		color:	blue
+		textcolor:	black
+	}
+	edge: {
+		sourcename:	"79"
+		targetname:	"82"
+		label:	"Block"
+		color:	green
+		textcolor:	black
+	}
+	node: {
+		title:	"80"
+		label:	"state 80\n FunDecl -> TYPE ID STARTPASS @1 ParamDeclList ENDPASS Block ."
+	}
+	node: {
+		title:	"81"
+		label:	"state 81\n Block -> STARTFUN DeclList ENDFUN ."
+	}
+	node: {
+		title:	"82"
+		label:	"state 82\n IfExpr -> IF STARTPASS Condition ENDPASS Block ELSE Block ."
+	}
+
+
+}
